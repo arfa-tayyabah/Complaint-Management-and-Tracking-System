@@ -16,9 +16,9 @@ The **Complaint Management and Tracking System** is a comprehensive digital plat
 
 ##  Team Members
 
-| **Arfa Tayyabah** | NUM-BSCS-2024-16 | bscs24f16@namal.edu.pk 
-| **Muhammad Bilal** | NUM-BSCS-2023-21 | bscs23f21@namal.edu.pk 
-| **Samra Zamurd** | NUM-BSCS-2024-72 | bscs24f72@namal.edu.pk 
+ **Arfa Tayyabah** | NUM-BSCS-2024-16 | bscs24f16@namal.edu.pk 
+**Muhammad Bilal** | NUM-BSCS-2023-21 | bscs23f21@namal.edu.pk 
+**Samra Zamurd** | NUM-BSCS-2024-72 | bscs24f72@namal.edu.pk 
 
 ---
 
@@ -45,11 +45,10 @@ The **Complaint Management and Tracking System** is a comprehensive digital plat
 - 📝 [LaTeX Source Code](./Proposal/Project_Proposal.tex)
 - 📋 [RP Agreement (Signed)](./Documentation/RP_Agreement.pdf)
 
-# Milestone 2 - Requirements Document (Upcoming)
-# Milestone 3 - System Design (Upcoming)
-
-# Milestone 4 - Implementation & Testing (Upcoming)
-# Milestone 5 - Final Delivery (Upcoming)
+**Milestone 2** - Requirements Document (Upcoming)
+**Milestone 3** - System Design (Upcoming)
+**Milestone 4** - Implementation & Testing (Upcoming)
+**Milestone 5** - Final Delivery (Upcoming)
 
 ##  Meeting Records
 
@@ -206,9 +205,6 @@ We would like to express our gratitude to:
 
 
 <div align="center">
-
-**Made with ❤️ by Team CCMTS**
-
 *Namal University, Mianwali | Fall 2025*
 
 [🔝 Back to Top](#campus-complaint-management-and-tracking-system-ccmts)
