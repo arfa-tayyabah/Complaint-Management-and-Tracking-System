@@ -17,7 +17,9 @@ The **Complaint Management and Tracking System** is a comprehensive digital plat
 ##  Team Members
 
  **Arfa Tayyabah** | NUM-BSCS-2024-16 | bscs24f16@namal.edu.pk 
+ 
 **Muhammad Bilal** | NUM-BSCS-2023-21 | bscs23f21@namal.edu.pk 
+
 **Samra Zamurd** | NUM-BSCS-2024-72 | bscs24f72@namal.edu.pk 
 
 ---
@@ -43,7 +45,6 @@ The **Complaint Management and Tracking System** is a comprehensive digital plat
 - **Status**: Submitted
 - 📄 [Project Proposal (PDF)](./Proposal/Project_Proposal.pdf)
 - 📝 [LaTeX Source Code](./Proposal/Project_Proposal.tex)
-- 📋 [RP Agreement (Signed)](./Documentation/RP_Agreement.pdf)
 
 **Milestone 2** - Requirements Document (Upcoming)
 **Milestone 3** - System Design (Upcoming)
@@ -154,9 +155,8 @@ The CMTS project aims to achieve the following specific objectives:
 All project documentation is maintained in the `/Documentation` folder:
 
 - 📋 [Project Proposal](./Proposal/Project_Proposal.pdf)
-- 📝 [RP Agreement](./Documentation/RP_Agreement.pdf)
-- 📊 [Meeting Minutes](https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE)
-- 🎥 [Meeting Videos](./Meeting_Videos/)
+- 📊 [Meeting Minutes]([https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE](https://docs.google.com/spreadsheets/d/1C8OWgyDDwSmcFeImHzNbFZtPHb5JOp70PnEsCNUxZAw/edit?gid=0#gid=0))
+
 
 ---
 
@@ -199,7 +199,7 @@ We would like to express our gratitude to:
 
 -  [Project Proposal](./Proposal/Project_Proposal.pdf)
 -  [Meeting Minutes](https://docs.google.com/spreadsheets/d/1C8OWgyDDwSmcFeImHzNbFZtPHb5JOp70PnEsCNUxZAw/edit?gid=0#gid=0)
--  [First Meeting Video](./Meeting_Videos/Meeting_01_2025-11-04.mp4)
+
 
 
 
