@@ -56,7 +56,7 @@ The **Complaint Management and Tracking System** is a comprehensive digital plat
 ### Meeting Minutes
 All project meetings with the Requirement Provider and team discussions are documented in our shared Google Sheet:
 
- **[Meeting Minutes - Google Sheet]([https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE](https://docs.google.com/spreadsheets/d/1C8OWgyDDwSmcFeImHzNbFZtPHb5JOp70PnEsCNUxZAw/edit?gid=0#gid=0))**
+ **[Meeting Minutes - Google Sheet](https://docs.google.com/spreadsheets/d/1C8OWgyDDwSmcFeImHzNbFZtPHb5JOp70PnEsCNUxZAw/edit?gid=0#gid=0)**
 
 ### Meeting Schedule
 - **Frequency**: Bi-weekly (Every two weeks)
