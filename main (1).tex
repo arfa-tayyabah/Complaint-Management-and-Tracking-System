@@ -1,0 +1,280 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{url}
+\geometry{
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
+}
+\definecolor{numlgreen}{RGB}{0,102,68}
+\definecolor{numlyellow}{RGB}{218,165,32}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\LARGE\bfseries Project Proposal\par}
+    
+    \vspace{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{image.png} 
+    
+    \vspace{1.5cm}
+    
+        \begin{tabular}{p{4cm}p{10cm}}
+        \textbf{Course:} & CSC-225 Software Engineering \\[0.3cm]
+        \textbf{Instructor:} & Miss Asiya Batool \\[0.3cm]
+        \textbf{Submission Date:} & November 9, 2025 \\[0.3cm]
+        \textbf{Project Title:} & Complaint Management and Tracking System \\ [0.3cm]        
+        \textbf{Submitted by:} &  \\
+        \end{tabular}
+        
+        \vspace{0.5 cm}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Name} & \textbf{Roll Number} & \textbf{Email} \\
+        \hline
+        Arfa Tayyabah & NUM-BSCS-2024-16 & \texttt{bscs24f16@namal.edu.pk} \\
+        \hline
+        Muhammad Bilal & NUM-BSCS-2023-21 & \texttt{bscs23f21@namal.edu.pk} \\
+        \hline
+        Samra Zamurd & NUM-BSCS-2024-72 & \texttt{bscs24f72@namal.edu.pk} \\
+        \hline
+    \end{tabular}
+    
+    \vspace{4 cm}
+    {\large Fall -- 2025\par}
+    \vspace{0.3 cm}
+    {\large Department of Computer Science, Namal University Mianwali\par}
+    
+    \vspace{1cm} 
+\end{titlepage}
+\newpage
+{\Large\textbf{Requirement Provider Agreement}}\\[1cm]
+\includegraphics[width=1\textwidth]{Page1.png}
+\newpage
+\includegraphics[width=1\textwidth]{Page2.png}
+\clearpage
+\thispagestyle{empty}
+\vspace*{4 cm}
+\begin{center}
+{\Huge \textbf{Table of Contents}}\\[1cm]
+\end{center}
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+The Complaint Management and Tracking System is a platform designed to digitalize complaint processing within a university. It ensures that every campus facility issue is reported, tracked and resolved efficiently. The proposed system will serve multiple types of users including students, faculty, staff members and administration. Students can report any issue immediately and see the progress. Faculty and staff can also file complaints regarding workplace issues as well as play a role in resolving students' complaints. Administration can submit complaints, resolve them, update their status and generate performance reports. 
+
+
+\section{Problem Statement}
+In manual complaint handling system within a university, complaints are submitted via emails or verbal communication. There is no system to record complaints and track them to check progress. Communication between complainants and the administration is limited which delays response time and complaint resolution. Complainants cannot see any progress on their complaint. This unstructured system causes inefficiency and decreases user satisfaction.
+
+The Campus Complaint Management and Tracking system solves this problem through a digital platform which enables complainants to submit their complaints. It enables them to track their complaint and receive status updates by assigning a unique ID to each complaint. It aims to enhance response and resolution times by keeping record of all registered complaints. It allows administrators to generate reports and analyze them for future improvements.
+
+\section{Project Objectives}
+The objectives of this project are as follows:
+
+\begin{enumerate}
+    \item To  reduce response time and resolution delays caused by manual management of complaints.
+    \item To enable complaint tracking where users receive updates and notifications throughout the resolution process
+    \item To enhance efficiency by allowing the administrators to analyze performance and generate reports
+    \item To increase user satisfaction through feedback mechanisms and improve transparency in handling complaints
+\end{enumerate}
+
+\section{Stakeholders Identification}
+The individuals and the groups who will interact and be affected by the Campus Complaint Management System are given below. Identifying all these persons is necessary to gather all required information and requirements of the system.
+
+\subsection{Students}
+
+\textbf{Role:} End users who submit their complaints regarding academic, administrative or technical issues.
+
+{\vspace{0.1 cm}}
+\noindent
+\textbf{Relationship with the System:}
+
+ Students can submit their complaints, view and track them. They can also provide feedback about complaint resolution.
+
+
+\subsection{Faculty}
+\textbf{Role:} End users who submit their complaints regarding academic or workplace issues. They can also be involved in solving academic complaints.
+
+{\vspace{0.1 cm}}
+\noindent
+\textbf{Relationship with the System:}
+
+ Faculty can Submit complaints regarding academic or administrative issues. They can track complaints they have submitted. They can resolve complaints on academic matters and provide feedback on student's complaints.
+
+
+\subsection{Staff Members}
+\textbf{Role:} Administrative and technical staff who may submit their complaints regarding administrative and technical issues.
+
+{\vspace{0.1 cm}}
+\noindent
+\textbf{Relationship with the System:}
+
+ They can submit complaints regarding workplace issues. They can resolve complaints on administrative matters and provide feedback on student's complaints.
+
+
+\subsection{Complaint Handlers / System Operators}
+\textbf{Role:} Administrative members who are responsible for operating the system. They receive, review and handle complaints.
+
+{\vspace{0.1 cm}}
+\noindent
+\textbf{Relationship with the System:}
+
+They receive complaints and review them. They can update complaint status and communicate with complainants. They can record complaints, generate performance reports and document action on complaint resolutions.
+
+
+\section{Methodology}
+The Complaint Management and Tracking System will be developed using the Agile Software Development Methodology (Scrum Framework). This methodology will promote iterative development, flexibility, and user feedback, making it ideal for campus-level systems involving multiple users.
+
+\subsection{Reason for choosing Scrum Framework}
+\begin{enumerate}
+    \item Multiple user roles (students, faculty, maintenance staff, administrators) may change requirements according to need.
+    \item Scrum enables faster delivery of working parts and early user feedback.
+    \item Bi-weekly Requirement Provider (RP) meetings align with Scrum's sprint review philosophy.
+    \item Problems are detected and resolved at early stages
+    \item User Interface requires continuous feedback from client.
+    \item Agile allows team to learn and improve working with time.
+\end{enumerate}
+
+\subsection{Scrum Framework Components}
+
+\subsubsection{Sprint Structure}
+Each sprint will consist of  following activities:
+\begin{enumerate}
+    \item \textbf{Sprint Planning}: Define sprint goals and select backlog items.
+    \item \textbf{Daily Scrum}: 15-minute team meetings
+    \item \textbf{Sprint Review}: Deliver sprint increment to stakeholders and get feedback.
+    \item \textbf{Sprint Retrospective}: Discuss last sprint and identify improvements.
+\end{enumerate}
+
+\subsubsection{Scrum Artifacts}
+\begin{enumerate}
+    \item \textbf{Product Backlog}: List of features and requirements
+    \item \textbf{Sprint Backlog}: Tasks to be performed in the  current sprint
+    \item \textbf{Increment}: Working software delivered at end of each sprint
+\end{enumerate}
+
+\subsubsection{Team Roles}
+\begin{enumerate}
+    \item \textbf{Product Owner (Requirement Provider)}: Defines requirements and priorities.
+    \item \textbf{Scrum Master (Arfa Tayyabah)}:  Establishes scrum process and guides team.
+    \item \textbf{Development Team}: All three members will collaboratively build the system.
+\end{enumerate}
+
+\subsection{Development Schedule}
+
+The project will span 12 months divided into following sprints:
+
+\subsubsection{Sprint 1-2: Project Initialization }
+\begin{enumerate}
+    \item Team formation and role assignment
+    \item Initial product backlog creation
+    \item Project meetings with RP
+    \item User story creation and prioritization
+     \item \textbf{Deliverable}: Requirements document
+\end{enumerate}
+\subsubsection{Sprints 3-4: User Authentication and Dashboards}
+\begin{enumerate}
+    \item User authentication and authorization
+    \item Separate accounts for all end users
+    \item Basic UI design
+     \item \textbf{Deliverable}: Users can log into the system
+\end{enumerate}
+
+\subsubsection{Sprints 5-6: Complaint Submission}
+\begin{enumerate}
+    \item Complaint submission interface
+    \item Complaint Categories
+    \item Basic Database Structure
+     \item \textbf{Deliverable}: Users can submit and view complaints
+\end{enumerate}
+\subsubsection{Sprints 7-8: Complaint Tracking and Updates}
+\begin{enumerate}
+    \item Status update mechanism
+    \item Email notification system
+    \item \textbf{Deliverable}: Users can track complaint progress
+\end{enumerate}
+\subsubsection{Sprints 9-10: Admin Features}
+\begin{enumerate}
+    \item Admin dashboard development
+    \item Complaint assignment system
+    \item Basic reporting functionality
+    \item \textbf{Deliverable}: Complete admin panel
+\end{enumerate}
+
+\subsubsection{Sprints 11-12: Advanced Features}
+\begin{enumerate}
+    \item File upload functionality
+    \item In-system messaging
+    \item Mobile-responsive design
+    \item Analytics dashboard
+    \item \textbf{Deliverable}: Feature-complete system
+\end{enumerate}
+
+\subsubsection{Sprints 13-14: Testing}
+\begin{enumerate}
+    \item Comprehensive testing (unit, integration)
+    \item Performance optimization
+    \item Bug fixes and refinements
+    \item Documentation
+    \item \textbf{Deliverable}: Production-ready system
+\end{enumerate}
+\includegraphics[width=1\textwidth]{Gantt Chart.png}
+\section{Tools and Technologies}
+The following tools and technologies will be used for developing Complaint Management and Tracking  System:
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Section} & \textbf{Tool / Technology} & \textbf{Purpose} \\
+\hline
+Front-end & HTML, CSS and JavaScript & User friendly interface design \\
+\hline
+Backend & PHP or Python (Flask) & Handling business logic and user requests \\
+\hline
+Database & MySQL or SQLite & Storing complaints, users and system data \\
+\hline
+Design Tools & Figma / Canva & UI/UX and prototype design \\
+\hline
+Version Control & Git, GitHub & Source code management and collaboration \\
+\hline
+Documentation & LaTeX & Preparing professional reports \\
+\hline
+IDE & Visual Studio Code & Code development and debugging \\
+\hline
+Testing Tools & JIRA, YouTrack, TestLink & Testing, validation and issue tracking \\
+\hline
+Implementation & Docker / Local Server & System hosting environment \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\section{References}
+\begin{thebibliography}{1}
+
+\bibitem{claude2025}
+Claude (Anthropic AI), ``Suppose you are a requirement engineer tasked with making a complaint management system, what questions would you ask your RP'' *Anthropic, Sonnet 4.5*, Nov.~4,~2025. [Online]. Available: \url{https://claude.ai}
+\bibitem{claude2025}
+Claude (Anthropic AI), ``Suppose you are a requirement engineer tasked with making a complaint management system, how would you describe the system and problem it solves'' *Anthropic, Sonnet 4.5*, Nov.~4,~2025. [Online]. Available: \url{https://claude.ai}
+\bibitem{claude2025}
+Claude (Anthropic AI), ``How to create table in LaTex'' *Anthropic, Sonnet 4.5*, Nov.~6,~2025. [Online]. Available: \url{https://claude.ai}
+\bibitem{claude2025}
+Claude (Anthropic AI), ``How to add subheadings and bullet points in LaTex'' *Anthropic, Sonnet 4.5*, Nov.~6,~2025. [Online]. Available: \url{https://claude.ai}
+\bibitem{claude2025}
+Claude (Anthropic AI), ``My teacher asked me to add prompts that I have given to AI in writing this proposal in references section, guide me how to add them adhering to IEEE'' *Anthropic, Sonnet 4.5*, Nov.~6,~2025. [Online]. Available: \url{https://claude.ai}
+
+\end{thebibliography}
+
+\end{document}
