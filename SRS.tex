@@ -1,0 +1,1450 @@
+\documentclass[12pt]{report}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{enumitem}
+\setcounter{secnumdepth}{3}  % Number up to subsubsection
+\setcounter{tocdepth}{3}     % Include subsubsection in table of contents
+\title{SRS}
+\author{Arfa Tayyabah}
+\date{December 2025}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+
+    \vspace*{2cm}
+
+    {\Large \textbf{Software Requirements Specification}}\\[0.5cm]
+    {\large for}\\[0.5cm]
+    {\Large \textbf{Complaint Management and Tracking System}}\\[2cm]
+    \includegraphics[width=0.3\textwidth]{image.png}
+
+    {\vspace{0.2 cm}}
+
+    {\itshape
+    Namal University Mianwali\\
+    Department of Computer Science
+    }\\[1 cm]
+    {\large \textbf{Prepared by:}}\\[0.5cm]
+    Arfa Tayyabah  -  NUM-BSCS-2024-16 \\
+Samra Zamurd  -   NUM-BSCS-2024-72\\
+Muhammad Bilal - NUM-BSCS-2023-21\\
+\vspace*{1cm}
+ 
+28 December 2025 \\ [1 cm]
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\chapter{Introduction}
+\label{ch:intro}
+
+\section{Purpose}
+\subsection{Overview of the Document}
+This Software Requirements Specification (SRS) document provides complete description of Complaint Management and Tracking System to be developed for Namal University Mianwali. The primary goal is to guide the
+development process and ensure alignment with the expectations of all stakeholders, including
+project sponsors, developers, and users.
+
+\subsection{Purpose of the Document}
+The purpose of this SRS Document is to:
+\begin{itemize}
+    \item Specify functional and non-functional requirements of the system.
+    \item Serve as a reference for the development team to ensure the successful implementation of all features.
+    \item Clarify the platform's objectives for all stakeholders, ensuring mutual understanding and
+alignment.  
+\end{itemize}
+ 
+\subsection{Intended Audience}
+The intended audience for this SRS document includes:
+\begin{itemize}
+    \item \textbf{Stakeholders:} To validate that the system meets the needs of the organization and align it with organizational objectives.
+    \item \textbf{Development team:} To understand the system and use detailed functional and non-functional requirements as a road map for implementation.
+    \item \textbf{Project Managers:} To monitor development progress and ensure resource allocation aligns with project timelines and goals.
+    \item \textbf{Quality Assurance Team:} To write test cases and validate the system.      
+\end{itemize}
+
+\section{Scope}
+\subsection{Product Identification} Complaint Management and Tracking System is a mobile-based platform designed to digitalize the process of submitting and resolving complaints within the environment of Namal University. The system shall provide role-based access to various users to enhance communication between the complainants and campus administration.
+
+{\vspace{0.2 cm}}
+\noindent \large\textbf{What the System shall do:}
+
+\begin{enumerate}
+    \item Enable students, faculty and staff members to submit complaint regarding academic, administrative and technical issues.
+    \item Provide role-based access to users.
+    \item Support file attachments (images) for complaint submission.
+    \item Track the real-time status of complaints and get updates through mobile.
+    \item Enable system operators to view, resolve and update status of complaints.
+    \item Get user feedback on complaint resolution process.
+    \item Generate performance reports and analytics for review.
+\end{enumerate}
+\large\textbf{What the System shall not do:}
+\begin{enumerate}
+    \item The system shall not interact with external maintenance managers.
+    \item The system shall not provide budgeting features. 
+    \item The system shall not support anonymous complaint submission (without the official email of Namal University).
+    \item The system shall not resolve complaints without human operators.
+    \item The system shall not be used for emergency or crisis management.
+\end{enumerate}
+
+\noindent \large\textbf{Benefits and Objectives:}
+\begin{enumerate}
+    \item The system reduces complaints resolution delays caused by manual management of complaints.
+    \item It provides transparency by enabling users to track
+    complaints in real-time.  
+    \item It enhances communication between
+    complaint handlers and complainants through notifications
+    and updates.
+    \item The system improves performance through reports 
+    and  analytics.
+    \item It improves user satisfaction by timely resolution of complaints and feedback mechanisms.
+\end{enumerate}
+\section{Definitions, Acronyms, and Abbreviations}
+\begin{table}[H]
+\centering
+\caption{Definitions and Abbreviations}
+\vspace{0.3 cm}
+\label{tab:definitions}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline 
+\textbf{Term/Abbreviation} & \textbf{Definition} \\ \hline 
+SRS & Software Requirements Specification \\ \hline
+CMTS & Complaint Management and Tracking System being specified in this document\\ \hline
+Complaint & A formal request submitted by user describing an problem related to the campus. \\ \hline 
+Complainant & Students, Faculty and staff members who may submit a complaint through the system.  \\ \hline
+System Operator or Complaint Handler & Administrative personnel responsible for receiving, updating, and resolving complaints. Also referred to as Administrator. \\ \hline
+RP & Requirement Provider \\ \hline
+Complaint Status & The current state of a complaint like submitted, under review,  resolved etc. \\ \hline
+Active Directory & Microsoft's directory service that provides authentication and authorization services for Windows domain networks. \\ \hline
+LDAP & Lightweight Directory Access Protocol. An application protocol for accessing and maintaining distributed directory information services. \\ \hline
+DFD & Data Flow Diagram  showing the flow of data 
+  through an information system. \\ \hline
+
+
+\end{tabular}
+\end{table}
+
+\section{References}
+\begin{enumerate}[label={[\arabic*]}, leftmargin=1 cm]
+\item ANSI/IEEE Std 830-1984, \textit{IEEE Guide to Software Requirements Specifications}, IEEE, 1984.
+
+\item Project Proposal: \textit{Complaint Management and Tracking System}, CSC-225 Software Engineering, Namal University, 2025.
+
+    \item Constitution of Islamic Republic of Pakistan,  \textit{Article 14},Dignity of Man and Privacy of Home, 1973.
+\item Project Milestone 2 Description, CSC-225 Software Engineering, Namal University, November 2025.
+\end{enumerate}
+\newpage
+\section{Overview}
+The remaining SRS document consists of two chapters.
+
+\noindent \textbf{Chapter 2:} This chapter describes the general factors that affect system its requirements such as, user characteristics, general constraints, and assumptions.
+
+\noindent \textbf{Chapter 3:} This chapter describes the detailed technical specifications of the system like its functional and non-functional requirements, performance requirements and design constraints.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{General Description}
+This section provides a comprehensive overview of Complaint Management and Tracking System , its context within related systems, major functionalities, user characteristics, and the constraints under which it operates. Rather than
+specifying detailed requirements, this section sets the stage for understanding those requirements by offering relevant background and descriptive elements.
+
+\section{Product Perspective}
+The Complaint Management and Tracking System is a self-contained mobile application. It is not a replacement for an existing system but rather introduces a formalized digital workflow where none previously existed.
+\subsection{ System Context}
+The CMTS exists within a larger university technology ecosystem and interfaces with the following external systems:
+\begin{itemize}
+    \item University Authentication System: For user identity verification and role assignment. (Implementation method TBD - may use university LDAP, Active Directory, or custom authentication database).
+    \item University Personnel Directory: For retrieving user information such as name, department, contact details, and role classification.
+
+\end{itemize}
+\subsection{System Independence:}
+While the CCMTS interfaces with the above systems, it maintains its own:
+\begin{itemize}
+\item Complaint database and complaint lifecycle data
+\item User session management
+\item Business logic and workflow rules
+\item Mobile application interface
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.2\textwidth]{context.png}
+    \caption{Context Diagram (Level 0 DFD)}
+    \label{fig:Contexts_diagram}
+\end{figure}
+\newpage
+\section{Product Functions}
+The CCMTS shall provide the following major functional capabilities:
+\subsection{User Account Management:}
+\begin{enumerate}
+    \item User registration and authentication
+    \item Role-based access control (Student, Faculty, Staff, System Operator)
+    \item Profile management
+\end{enumerate}
+\subsection{Complaint Management}
+\begin{enumerate}
+    \item Complaint creation with category selection
+    \item File attachment support (images)
+    \item Automatic complaint ID generation
+    \item Real-time complaint status viewing
+\end{enumerate}
+\subsection{Workflow Management:}
+\begin{enumerate}
+    \item Complaint assignment to appropriate handlers
+    \item Severity level assignment
+    \item Status update capabilities for authorized personnel
+\end{enumerate}
+\subsection{Reporting and Analytics:}
+\begin{enumerate}
+    \item Performance reports generation
+    \item Resolution time analysis
+    \item Complaint sorting by category, status, time period
+\end{enumerate}
+\subsection{User satisfaction metrics:}
+\begin{enumerate}
+    \item Post-resolution feedback collection
+    \item Rating system for complaint handling quality
+\end{enumerate}
+\subsection{Administrative Functions:}
+\begin{enumerate}
+    \item User role management
+    \item Complaint category configuration
+    \item Data export capabilities
+\end{enumerate} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.1\textwidth]{use_case.png}
+    \caption{Use Case Diagram}
+    \label{fig:use_case_diagram}
+\end{figure}
+\section{User Characteristics}
+The CCMTS shall serve four distinct user classes with varying levels of technical expertise and system interaction patterns:
+\subsection{Students:}
+\begin{itemize}
+    \item \textbf{Educational Level:} Undergraduate students enrolled at Namal University
+     \item \textbf{Technical Expertise:}  Basic to intermediate mobile application usage skills; familiar with social media and messaging applications
+      \item \textbf{System Usage Frequency:} Occasional (weekly to monthly, depending on need)
+       \item \textbf{Primary Activities:} Submit complaints, track complaint status, provide feedback
+       \item \textbf{Access Requirements:} Requires authenticated access with student credentials
+       \item \textbf{Expected Volume:} Approximately 300-400 active student users
+\end{itemize}
+ 
+\subsection{Faculty:}
+\begin{itemize}
+    \item \textbf{Educational Level:}  Advanced degrees (Master's, PhD); teaching and research staff
+     \item \textbf{Technical Expertise:}   Intermediate mobile application usage skills; comfortable with professional communication tools
+      \item \textbf{System Usage Frequency:} Occasional to moderate
+       \item \textbf{Primary Activities:} Submit complaints regarding academic/workplace issues, track personal complaints, may participate in academic complaint resolution
+       \item \textbf{Access Requirements:} Requires authenticated access with faculty credentials
+       \item \textbf{Expected Volume:} Approximately 50-70 faculty users
+\end{itemize}
+ 
+\subsection{Staff Members:}
+\begin{itemize}
+    \item \textbf{Educational Level:}  High school to bachelor's degree; administrative and technical support personnel
+     \item \textbf{Technical Expertise:} Basic to intermediate mobile application skills
+      \item \textbf{System Usage Frequency:} Occasional (as needed for workplace issues)
+       \item \textbf{Primary Activities:} Submit complaints regarding administrative/technical issues, may participate in complaint resolution within their domain
+       \item \textbf{Access Requirements:}  Requires authenticated access with staff credentials
+       \item \textbf{Expected Volume:} Approximately 100-150 staff users
+\end{itemize}
+\subsection{System Operators / Complaint Handlers (Administrators):}
+\begin{itemize}
+    \item \textbf{Educational Level:}   Bachelor's degree or higher; administrative management personnel
+     \item \textbf{Technical Expertise:} Intermediate to advanced mobile and web application skills; familiar with workflow management systems
+      \item \textbf{System Usage Frequency:} Daily (continuous monitoring and management)
+       \item \textbf{Primary Activities:} Review incoming complaints, assign complaints to appropriate personnel, update complaint status, communicate with complainants, generate reports, manage system configuration
+       \item \textbf{Access Requirements:}  Requires authenticated access with elevated administrative privileges
+       \item \textbf{Expected Volume:} Approximately 5-10 administrative users
+\end{itemize}
+\section{General Constraints}
+\label{sec:general_constraints}
+
+This section presents the key limitations and constraining factors that impact the design and development of the Complaint Management Tracking System (CMTS). The architecture of the system, functionality, and deployment plan are directly affected by all these limitations. Understanding these ensures that the end platform is compliant, efficient, scalable and  responsive to the needs of the users.
+
+\subsection{Regulatory and Policy Constraints}
+
+The complaint management system must be functional with strict rules and institutional policies to protect sensitive information particularly those of the students and employees.
+
+\begin{itemize}
+    \item \textbf{Data Protection Compliance:} The CMTS shall be required to comply with with constitutional 
+  provisions under Article 14 regarding privacy and protection of personal data. since the complaints may contain any academic or personal information about a student. This constraint requires user authentication and role based access controls which are described in Section 3.
+        
+    \item \textbf{University Governance Policies:} In addition to the federal law, the system must also adhere with the university policies on the issues of complaint resolution, data confidentiality and disciplinary measures. This shall be done through following such institutional regulations in the recording, and reporting of complaints.
+\end{itemize}
+
+\subsection{Hardware and Platform Limitations}
+
+Being mobile-application, the system must be capable of addressing real-life hardware and connectivity constraints:
+
+\begin{itemize}
+    \item \textbf{Platform Constraint:} The system shall be developed as a native or cross-platform mobile application supporting both iOS and Android operating systems. A mobile-first approach is mandatory.
+    \item \textbf{Fluctuation of Network Connectivity:} There is a possibility of the user posting and/or reading complaints  in areas of campus with bad or poor internet connectivity. The system should be capable of permitting the offline view of already loaded information and also handle the network failures gracefully so that system does not crash and the information is not lost.
+     \item \textbf{Camera and Storage Access:} Since there may be a chance that the user would need to attach photographic evidence, the app shall demand the required camera and storage access on the mobile devices. This drives requirements for user permission procedures and permission control.
+\end{itemize}
+
+\subsection{Interface Constraints}
+The CMTS entirely relies on the LDAP / Active Directory of the university to log-in the user. It cannot verify users independently. Such dependency means that the system shall be required to include error handling to handle the case where the authentication service shall be unavailable temporarily, without creating the impression that the system is stuck.   
+
+\subsection{Operational Constraints}
+
+\begin{itemize}
+    \item \textbf{Concurrent Access:}It should be able to allow numerous users including complainants and administrators to view and edit complaints simultaneously. This necessitates a keen database handling in Section 3.
+    
+    \item \textbf{Multi-platform Support:} The system needs to operate on Android and iOS phone platforms and in this regard, the system needs to be designed to support both. This has an influence on its speed and the number of features that it can offer, and these are recorded in the technology stack in Section 3. 
+    \item \textbf{University IT Infrastructure:} The system must be integrated into the existing IT configuration at the university, in accordance with security regulations such as firewalls, as well as utilizing the existing servers. This affects the deployment process of the system, back up scheduling, and the frequency at which the system shall be available.
+\end{itemize}
+
+\subsection{Audit and Compliance Functions}
+
+\begin{itemize}
+    \item \textbf{Audit Trail Requirements:} It shall be necessary to document all details regarding complaints as it is not only legally but also institutionally mandatory. Whenever the complaint is made, changed, updated or viewed, the system should record the individual who made the complaint, changed it, updated it, or looked at it.
+    
+    \item \textbf{Record Retention Policies:} Laws and rules of the university might implement complaints records to stay in 5-7 years.  
+So it is  required that system  shall store the data, keep it for its life cycle and destroy it safely once the time elapses.
+    
+    \item \textbf{Reporting and Analytics:} Admins and compliance staff should have reports and trend analysis. This implies that the database should be capable of processing rapid queries, data validation and data  exporting.
+\end{itemize}
+
+\subsection{Access Control and Security Constraints}
+
+\begin{itemize}
+    \item \textbf{Role-Based Access Control:} Various users like students, faculty, staff, and administrators should have different levels of system access and data visibility. This states the need for role based accessed described in section 3.
+    
+    \item \textbf{Data Confidentiality Levels:} The complaint may be the general comment or severe. Each type of complaint requires a different level of confidentiality, security and special treatment of sensitive complaints.
+    
+    \item \textbf{Secure Communication:} Any data that is being transmitted between the mobile application and the server should be encrypted to prevent interception mandating requirements for data encryption and security in Section 3.
+\end{itemize}
+
+\subsection{Criticality and Reliability Considerations}
+
+\begin{itemize}
+    \item \textbf{System Availability:} CMTS is not life critical system, yet, it may receive time sensitive safety complaints. Thus, requirements for  downtime, backup, and disaster recovery are formulated formulated in Section 3. 
+    
+    \item \textbf{Data Integrity:}  Loss or corruption of complaint data of individuals can cause complications. Hence, system shall have good database transactions, backups, data checks, and recovery facilities.  
+    \item \textbf{Graceful Degradation:} When portions of the system are malfunctioning such as the login or the database, the system must continue functioning as effectively as possible rather than crashing. During crisis, good error handling, fallbacks and communication with the user are required.
+\end{itemize}
+
+\subsection{Development and Maintenance Constraints}
+
+\begin{itemize}
+        
+    \item \textbf{Scalability Requirements:} The system must be scalable to support user growth form initially hundreds to thousands as time passes. This constraint drives architectural design, database design and  server infrastructure that enable horizontal scaling.
+    
+    \item \textbf{Maintenance Windows:} Updates are to be done at a time when there is low system usage often in the night or during weekends. This shall necessitate zero-downtime updates, cautious database migrations and compatibility of the mobile app and API versions.
+    \item \textbf{Project Timeline:}
+The project shall be completed within the 12-month academic project timeline as specified in the project proposal, divided into 14 two-week sprints.
+\item \textbf{Budget:}
+The system shall utilize open-source technologies and free-tier cloud services. No commercial software licenses shall be required.
+\item \textbf{Language:}
+The primary system language shall be English. Support for additional languages (Urdu) may be considered as a future enhancement.
+\item \textbf{Scrum Methodology:}
+Development shall follow the Agile Scrum framework with bi-weekly sprint cycles, sprint reviews with the Requirement Provider, and iterative delivery of functional increments.
+\end{itemize}
+
+These limitations constitute the functional and non-functional requirements in 3. All constraints elaborate the reasons to define requirements in a way that the system shall perform well within its operational, regulatory and technical or operational environment.
+\section{Assumptions and Dependencies}
+The following assumptions and dependencies affect the requirements specified in this document. Changes to these factors may necessitate revision of system requirements.
+
+\subsection{Assumptions}
+
+\begin{itemize}
+    \item \textbf{Network Infrastructure Stability:} The university maintains a stable campus network infrastructure with adequate bandwidth to support mobile application usage by 1000 concurrent users.
+
+    \item \textbf{User Authentication Management:} User authentication credentials (usernames, passwords) are managed by the university authentication system or can be securely stored in the CMTS database.
+
+    \item \textbf{User Device Compatibility:} All users possess smartphone devices (iOS version 12.0 or higher, or Android version 8.0 or higher) capable of running modern mobile applications.
+
+    \item \textbf{UI and Taxonomy Approval:} The Requirement Provider shall provide final approval of user interface designs and complaint category taxonomy by Sprint 6 (Month 3).
+
+    \item \textbf{Operator Training:} System Operators (administrative staff) shall receive training on system operation prior to production deployment.
+
+    \item \textbf{Hosting Infrastructure Availability:} The university IT department shall provide hosting infrastructure and database server access by Sprint 10 (Month 5).
+    \item \textbf{Financial System Independence:} The complaint resolution process does not require integration with financial systems or procurement workflows.
+\end{itemize}
+
+\subsection{Dependencies}
+
+\begin{itemize}
+    \item \textbf{Authentication System Specification:} Final system requirements depend on the university providing technical specifications for the authentication system (e.g., LDAP schema, API endpoints, or alternative authentication methods) by Sprint 4.
+
+    \item \textbf{Complaint Category Taxonomy:} The complete list of complaint categories and subcategories shall be provided by the Requirement Provider by Sprint 5.
+
+    \item \textbf{Personnel Directory Access:} User profile information population depends on access to the university personnel directory or provision of user data exports by Sprint 4.
+
+    \item \textbf{Mobile App Store Accounts:} Deployment to the iOS App Store and Google Play Store depends on the university providing appropriate developer accounts or approval for student team accounts by Sprint 13.
+
+    \item \textbf{Hosting Infrastructure Provisioning:} Production deployment depends on timely provisioning of server infrastructure, database instances, and network configuration by the university IT department.
+
+    \item \textbf{Third-Party Libraries:} The system depends on the continued availability and compatibility of selected open-source libraries and frameworks.
+
+    \item \textbf{Requirement Provider Availability:} Sprint reviews and requirement clarifications depend on bi-weekly availability of the Requirement Provider as stipulated in the project proposal agreement.
+
+    \item \textbf{Testing Device Availability:} Comprehensive testing depends on the availability of diverse iOS and Android devices for compatibility validation.
+\end{itemize}
+
+\newpage
+
+
+
+
+\chapter{Specific Requirements}
+\label{Specific Requirements}
+
+\section{Functional Requirements}
+
+\subsection{User Authentication}
+
+\subsubsection{User Login}
+
+\textbf{Introduction}
+
+The system shall verify users (students, faculty, and staff) with the help of university-generated credentials via the mobile application interface.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The user shall give the system a university-assigned username.
+    \item The user shall be required to enter a university-issued password into the system.
+    \item The system shall support a preference of Remember Me.
+\end{itemize}
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall authenticate the credentials typed in by the system with either the university authentication system or the stored user records.
+    \item The system shall pull out the role of the user (Student, Faculty, Staff) out of the database.
+    \item The system shall access the department and profile data of the user.
+    \item The system shall capture the time of the login and the device details.
+    \item The system shall freeze the account after five failed attempts to log in.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall redirect the user to the mobile app home screen once he/she has successfully logged in.
+    \item Information about the users (name, role) shall be shown on the home screen.
+    \item The system shall show invalid credentials error message.
+    \item The system shall show the lockout message when the account is temporarily locked and should contact the IT support.
+\end{itemize}
+
+\subsubsection{Logout}
+
+\textbf{Introduction}
+
+The system shall enable users to log out the mobile application in a safe manner.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The user shall provide a log out request to the system.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall wipe off any stored user information on the device.
+    \item The system shall log out the time.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall redirect the user to the login screen.
+    \item The system shall show a confirmation message.
+    \item The system shall erase any sensitive information on the device memory.
+\end{itemize}
+
+\subsection{Complaint Submission}
+
+\subsubsection{View Department List}
+
+\textbf{Introduction}
+
+The system shall provide a list of each active department to users to enable them choose a department to file complaints.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify the request of the logged-in user to form a new complaint.
+    \item The system shall accept a search query to narrow down on departments, optionally.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall extract all the departments that are open in database.
+    \item The system shall automatically order the departments in alphabetical order.
+    \item Departments shall be filtered according to search query provided the system.
+    \item The system shall show the number of departments to the user.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show a list of active departments that is scroll-able.
+    \item The system shall contain department name and brief description of each department.
+    \item The system shall show search results in case search query was entered.
+    \item In the case of absence of any search results, the system shall show No departments found.
+\end{itemize}
+
+\subsubsection{Select Complaint Tracker}
+
+\textbf{Introduction}
+
+The system shall enable the users to choose a particular tracker (complaint category) in the selected department.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall take a selection of a department.
+    \item The system shall take a search query optionally to filter trackers.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall bring all the active trackers that belong to the chosen department.
+    \item The system shall categorize trackers either by relevance or in an alphabetical manner.
+    \item The system shall be able to filter trackers according to search query provided.
+    \item The system shall be loaded with tracker descriptions and requirements.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item It shall show a list of available trackers to the chosen department.
+    \item The system shall enable the user to choose a tracker to continue.
+\end{itemize}
+
+\subsubsection{New Complaint}
+
+\textbf{Introduction}
+
+The system shall enable users to add and file a new complaint with all the necessary information.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The user shall be allowed to input a complaint subject/title into the system (compulsory, limited to 200 characters).
+    \item The system shall receive a detailed description of the complaint (compulsory, 2000 characters maximum).
+    \item The system shall accommodate the choice of priority levels (Normal, High, Urgent).
+    \item The system shall take room number (not mandatory, with a limit of 50 characters).
+    \item The system shall take estimated preference (option, in hours/days) of resolution time.
+    \item The system shall be open to file attachments (not compulsory, maximum 5 files, 2MB each).
+    \item The system shall receive camera (non-obligatory, up to 5 photos) photos.
+    \item Photos in the gallery (Optional, 5 photos) shall be accepted in the system.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall ensure that all the necessary fields are complete.
+    \item The system shall ensure that subject length is not more than 200 characters.
+    \item The system shall ensure that there is no more than 2000 characters of description.
+    \item The system shall authenticate file attachments based on size (not more than 2MB each) and file type (images: JPG, PNG).
+    \item The system shall compress images when they are bigger than the size limit even when they are readable.
+    \item The system shall create a distinct id of complaint.
+    \item The status of default shall be established as New.
+    \item The system shall fix the date of complaint raised as the current timestamp.
+    \item The system shall identify the complainant with the user who has logged in.
+    \item All the data on complaints shall be stored in the database.
+    \item The system shall upload and save file attachment to file storage system.
+    \item The system shall give alert to system administrators regarding new complaint.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show a successful message including the created complaint ID.
+    \item The system shall show the complaint created in the user complaint list.
+    \item The system shall redirect the user to the complaint details page.
+    \item There shall be error messages indicating failures of validation in the system.
+\end{itemize}
+
+\subsubsection{Capture Photo from Camera}
+
+\textbf{Introduction}
+
+The system shall enable the user to take pictures directly through the device camera when they are making a complaint.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall respond to the request of the user to take photo.
+    \item The device shall be asked by the system to give permission to the camera.
+    \item The system shall be able to receive camera obtained photo.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall verify whether permission to the cameras is approved.
+    \item The system shall enter into the native camera interface of the device.
+    \item The system shall authenticate the photo format it has been captured in.
+    \item The system shall compress the photo in case it is bigger than 2MB.
+    \item The system shall generate a preview in the form of a thumbnail.
+    \item Until the complaint is made, the photo shall be stored temporarily by the system.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The interface of a camera shall be shown in the system.
+    \item The system shall show a preview of the photo that has been taken.
+    \item An option to retake or use the photo shall be displayed in the system.
+    \item The system shall include the photo on the list of the complaint attachments.
+    \item The system shall show error message when the permission of the camera is denied.
+    \item This system shall be showing error message in case photo capture is not successful.
+\end{itemize}
+
+\subsubsection{Select Photos in Gallery}
+
+\textbf{Introduction}
+
+The system shall enable a user to choose some of the photos already stored in the device gallery when making a complaint.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall be able to identify request of user to pick photos in gallery.
+    \item The device shall be requested to access/store photos on the system.
+    \item The system shall not reject the chosen photos in gallery.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall be used to verify whether storage/photo permission is allowed.
+    \item The system shall open the photo picker interface of the device.
+    \item The system shall support the possibility of choosing several photos (a total of 5 including camera photos).
+    \item The system shall authenticate the photo formats (JPG, PNG).
+    \item The system shall authenticate every photo size (max 2MB).
+    \item The system shall reduce the size of photos beyond the size limits.
+    \item The system shall generate previews in form of thumbnails.
+    \item Photos shall be temporarily stored in the system till when a complaint is made.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The photo picker interface shall be shown on the system.
+    \item The system shall show the thumbnails of photos picked.
+    \item The system shall show the number of photos (e.g. 3 out of 5 photos are chosen).
+    \item In case of denying permission, the system shall show the error message.
+    \item Where photo limit is crossed, the system shall show error message.
+    \item The system shall show error message in case of invalid files forms or size.
+\end{itemize}
+
+
+\subsection{Tracking and Management of Complaints}
+
+\subsubsection{Functional Requirement: View My Complaints}
+
+\textbf{Introduction}
+
+The list of all complaints given by the logged-in user shall be shown in the system.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify the identifier of the logged in user.
+    \item The system shall be optional in terms of taking filter criteria (status, priority, date range).
+    \item The system shall be able to receive optional sort preferences (date, priority, status).
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall extract all the complaints posted by the user out of the database.
+    \item Applied filters in the system shall be used.
+    \item The system shall classify complaints according to user choice (default to be the latest).
+    \item The system shall load information about complaints (summary) (ID, subject, status, priority, date).
+    \item The system shall involve the total number of complaints, pending complaints, and resolved complaints.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show a list of complaints of the user that can be scrolled.
+    \item The system shall show complaint ID, subject, badge of status, badge of priority and the date of complaint submission of a complaint.
+    \item The system shall be color-coded in terms of status (e.g., blue New, yellow In Progress, green Resolved).
+    \item Status icons shall be displayed in the system to be identified quickly.
+    \item The system shall show total numbers on the top (e.g. 12 Total 5 Pending 7 Resolved).
+    \item In case the user does not have complaints, the system shall show No complaints found message.
+    \item The system shall support pull-to-refresh which shall refresh the list.
+    \item The system shall enable the user to tap on any complaint so as to see the comprehensive details.
+\end{itemize}
+
+\subsubsection{View Complaint Details}
+
+\textbf{Introduction}
+
+The system shall be showing all details of a chosen complaint.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall take in a complaint ID by the user.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The database shall be contacted to retrieve all the complaint data in the database.
+    \item Associated department and tracker information shall be retrieved by the system.
+    \item The system shall be able to get all status change history.
+    \item All comments and updates shall be retrieved by the system.
+    \item All the files and photos attached shall be retrieved by the system.
+    \item The system shall confirm user authorization to the view of the complaint.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item ID of the complaints shall be boldly written on the top of the system.
+    \item The system shall include the complaint subject/title.
+    \item There shall be visual indicator of current status on the system.
+    \item Priority level shall be shown as color coded in this system.
+    \item The system shall portray information of department and tracker.
+    \item The system shall show room number where necessary.
+    \item The system shall show description of complaints in full text.
+    \item The system shall show submission time and date.
+    \item The system shall indicate information of assigned handlers provided they are there.
+    \item The resolution time shall be estimated and displayed in the system in case it is set.
+    \item The system shall show all the photos attached in the form of scroll-able thumbnails.
+    \item The system shall include the viewing of all attached files as downloadable links.
+    \item Full status change timeline/history shall be shown on the system.
+    \item All the comments and updates shall be shown chronologically in the system.
+    \item The system shall have the facility of adding comments or other information.
+\end{itemize}
+
+
+
+\subsubsection{Filter Complaints by Status}
+
+\textbf{Introduction}
+
+The system shall permit the users to filter their complaints based on their status (New, In Progress, Resolved, Rejected, etc.).
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall receive status filter choice by the user.
+    \item The system shall allow several status choices at the same time.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall accept and retrieve complaints that correspond to the desired status(s).
+    \item The system shall have other active filters in case.
+    \item The system shall record the number of complaints.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show filtered list of complaints.
+    \item The system shall show number of complaints filtered.
+    \item The system shall include an alternative of clearing filters.
+    \item In case filter does not find any results, the system shall show No complaints found.
+\end{itemize}
+
+\subsubsection{Filter Complaints by Priority}
+
+\textbf{Introduction}
+
+The system shall enable the users to filter their complaints on the basis of priority level (Normal, High, Urgent).
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall be accepting priority filter choice by the user.
+    \item The system shall receive several priority choices at the same time.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall extract complaints that are of a corresponding level of priority(s) chosen.
+    \item The system shall have other active filters as it may or may not have.
+    \item The system shall refresh the number of complaints.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item Lists of filtered complaints shall be shown on the system.
+    \item The system shall show number of complaints filtered.
+    \item The system shall show filter badges that are in use.
+    \item An option to clear filters shall be given in the system.
+\end{itemize}
+
+\subsubsection{Date-range Filter Complaints}
+
+\textbf{Introduction}
+
+The system shall enable the users to narrow down their complaints according to date of submission.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The user shall feed in start date in the system.
+    \item The system shall accept end date as inputted by the user.
+    \item The system shall have fast filter features (Today, This Week, This Month, Last 3 Months).
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall ensure that end date must not be earlier than the start date.
+    \item The system shall be able to fetch the complaints within the date range that is selected.
+    \item Other active filters shall be maintained in the system.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show date picker interface.
+    \item The system shall have the quick filter buttons of popular date ranges.
+    \item The system shall show sifted complaints list.
+    \item The system shall show the date range that is chosen.
+    \item The system shall offer an option of clearing the date filter.
+\end{itemize}
+
+\subsubsection{Search Complaints}
+
+\textbf{Introduction}
+
+The system shall permit the user to search the complaints using a keyword either in subject or description.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall receive search key terms on the part of the user.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall also query the complaint subjects with keywords (case insensitive).
+    \item The system shall scan complaint description with similar keywords (insensitive to case).
+    \item The system shall access any similar complaints.
+    \item The system shall be in ranking relevance results.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show a search bar on the top of complaints list.
+    \item The system shall show similar complaints as entered by the user (live search).
+    \item The system shall indicate the similar keywords in the results.
+    \item The system shall show number of search results.
+    \item The system shall show No results found in case no matches are found in search.
+    \item The system shall have the clear search option.
+\end{itemize}
+
+\subsubsection{Sort Complaints}
+
+\textbf{Introduction}
+
+The system shall enable the user to categorize his or her complaints depending on various criteria.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall allow the selection of sort criterion (Date - Newest First, Date - Oldest First, Priority - High to Low, Status).
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall rank the list of complaints by choice.
+    \item The system shall have active filters during the sorting.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show sorting options (dropdown or bottom sheet).
+    \item The system shall present list of complaints sorted.
+    \item The system shall show the sort criterion that is in use.
+    \item The system shall uphold preference of sorting to the session.
+\end{itemize}
+
+\subsection{Communication and Updates}
+
+\subsubsection{Add Comment to Complaint}
+
+\textbf{Introduction}
+
+The system shall enable the users to post comments or other information to their complaints.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item A complaint ID shall be accepted by the system.
+    \item The system shall take up comment text whereby the user can combine 1000 characters (maximum).
+    \item The comment shall be optional in accepting file attachments hidden in the system.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall check that it has the comment text that is not empty.
+    \item The system shall authenticate the comment length (up to 1000 characters).
+    \item File attachments that are provided must be validated by the system.
+    \item The system shall save the comment in the database that shall be linked to the complaint.
+    \item The system shall retain comment timestamp and information of the author.
+    \item The system shall provide notification to system administrators of new comment.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item A comment input box on the details page of the complaint shall be brought out within the system.
+    \item The system shall show the newly added comment at once on the comments box.
+    \item The system shall show the comment with the date of the comment and author signifier of You.
+    \item A success message shall be shown in the system as Comment added.
+    \item The system shall show error messages to failures in validation.
+\end{itemize}
+
+\subsubsection{View Complaint Comments}
+
+\textbf{Introduction}
+
+The system shall show all the updates and comments about a complaint in chronological order.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item Complaint ID shall be accepted by the system.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall extract all the comments of the complaint in the database.
+    \item The system shall also access messages about system generated status updates.
+    \item The system shall list all the comments and updates in a chronological order (oldest or latest according to the desire of the user).
+    \item Each comment shall load the author information in the system.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show the entire comments in a scroll able form.
+    \item The system shall show the comments including their author, role, date and comment.
+    \item The system shall show you in case of comments left by the logged-in user.
+    \item The system shall show system administrator or the role name of the comments of the admins.
+    \item Attached files or photos in comments shall be displayed in the system.
+    \item In case there are no comments, the system shall show No comments yet.
+\end{itemize}
+
+\subsubsection{View Attachments}
+
+\textbf{Introduction}
+
+The system shall enable the users to access and download complains photos and files that are attached.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall receive a file/ photo choice of the user.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The file shall be accessed in the storage.
+    \item The system shall check on user authorization to access file.
+    \item System shall identify the type of file (image, PDF, or so on).
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall have image thumbnails in a horizontal scroll able gallery.
+    \item Images shall be opened in full-screen viewer once tapped on the system.
+    \item The system shall enable swiping through different pictures.
+    \item The system shall be able to offer file download to device option.
+    \item The system shall show file name and file sizes.
+    \item In case there is an error in loading file, the system shall show an error message.
+\end{itemize}
+
+\subsubsection{Receive Push Notifications}
+
+\textbf{Introduction}
+
+The system shall send push alerts to user whenever there is a significant update on complaints.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall track the changes in complaint status..
+    \item The system shall identify resolving of complaints.
+    \item The system shall identify assignment of complaints.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item It is the system that shall produce suitable notification message depending on the type of event.
+    \item The system shall indicate the owner of the complaint (user who posted it).
+    \item The system shall be used to push notification to the registered devices of the user.
+    \item The system shall retain notification in the notification history of the user.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall provide push notification on the device of user with:
+    \begin{itemize}
+        \item Title of the notification (e.g., Complaint Update, Complaint Resolved)
+        \item Short message (e.g., ``Your complaint title 12345 has changed its status to In Progress)
+        \item Complaint ID
+    \end{itemize}
+    \item The system shall either make notification sound/vibration depending on device settings.
+    \item When the notification is tapped, the system shall open the details of the particular complaint.
+    \item Count of notification badges on app icon shall be indicated in the system.
+\end{itemize}
+
+\subsubsection{View Notifications List}
+
+\textbf{Introduction}
+
+The system shall show a list of the received notifications by the user.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall be able to identify the request made by the user to access notifications.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall get all the notifications of the user that is logged in.
+    \item All notifications shall be sorted into date (newest first).
+    \item The system shall indicate notifications as read upon viewing.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall also show a scroll-able list of notifications.
+    \item Each notification shall be shown in the system with notification icon, text, and time.
+    \item The system shall make a differentiation between read and unread notices (vowel text or visual mark on unread).
+    \item The system shall also provide relative timestamps (e.g., 2 hours ago, Yesterday, Jan 15).
+    \item The system shall enable user to touch on notification to display related complaint.
+    \item In case of empty list, the system shall show No notifications message.
+    \item The system shall be able to feature option to mark all as read.
+    \item The system shall give an option of notifying the old notifications.
+\end{itemize}
+
+\subsection{Feedback and Rating}
+
+\subsubsection{Prompt for Feedback}
+
+\textbf{Introduction}
+
+The system shall automatically remind the users to leave feedback when their complaint has been indicated that it has been resolved.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall recognize the status change of complaint to resolved or accepted or closed.
+    \item The system shall identify the owner of complaint.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item This system shall ensure that this complaint has not been submitted in the form of feedback.
+    \item The system shall produce a notification of feedback request.
+    \item The system shall provide push notification to the user.
+    \item Feedback shall be shown on the app as part of the system.
+    \item A reminder on the system shall be activated to remind again after 48 hours in the event of no feedback being made.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall send push notification containing the message: Your complaint number 12345 is resolved. Please provide feedback.''
+    \item The system shall have a feedback banner on the complaint details page.
+    \item A clear button of Provide Feedback shall be shown in the system.
+    \item On button tap, the system shall open the feedback form.
+\end{itemize}
+
+\subsubsection{Submit Complaint Feedback}
+
+\textbf{Introduction}
+
+The system shall enable the users to leave feedback and rating on complaints that were resolved.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall receive a complaint ID.
+    \item The system shall accommodate the overall satisfaction rating (1-5 stars).
+    \item Ratings of certain aspects may be accepted in the system:
+    \begin{itemize}
+        \item Response Time (1-5 stars)
+        \item Quality of Communication (1-5 stars)
+        \item Resolution Quality (1-5 stars)
+    \end{itemize}
+    \item The system shall welcome voluntary text feedback/comments (up to 500 characters).
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall authenticate that overall rating is given (compulsory).
+    \item The system shall authenticate the text feedback length in case it is given.
+    \item The system shall capture feedback in the database that is related to the complaint.
+    \item The system shall indicate the complaint as feed back.
+    \item The ratings shall be updated system analytics by the system.
+    \item The system shall alert the administrators on feedback postings (particularly, low ratings).
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The feedback form shall be shown in the system containing:
+    \begin{itemize}
+        \item Star rating interface in general satisfaction.
+        \item Rating interfaces of particular aspects.
+        \item Text input box of further remarks.
+        \item ``Submit'' button
+    \end{itemize}
+    \item The system shall give visual feedback upon tapping stars (highlight selected stars).
+    \item The system shall show the number of characters to be used in text feedback (e.g., 250/500 characters).
+    \item Success message shall be displayed on the system: Thank you, your feedback. after submission.
+    \item The feedback prompt shall be concealed in the system upon submission.
+    \item The system would present the feedback submitted on complaint details page.
+\end{itemize}
+
+\subsubsection{View Submitted Feedback}
+
+\textbf{Introduction}
+
+The system shall enable the users to see the feedback they have already made in complaints that have been resolved.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall receive an ID of complaint.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall get feedback data of the complaint.
+    \item The system shall ensure the existence of feedback.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall provide feedback section on details of complaint page with:
+    \begin{itemize}
+        \item Cumulative rating in form of stars.
+        \item Ratings on specific aspects in form of stars.
+        \item Text feedback/comments
+        \item Submission date
+        \item ``Your Feedback'' header
+    \end{itemize}
+    \item In the case where there is no feedback, the system shall show Feedback not provided yet.
+    \item The system shall provide the opportunity to edit a feedback within 7 days of receiving it.
+\end{itemize}
+
+\subsection{User Profile}
+
+\subsubsection{View User Profile}
+
+\textbf{Introduction}
+
+The system shall show the profile information of the user who is logged in.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify the request of the user to access profile.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall load user profile information in the database.
+    \item The system shall calculate the statistics of user complaints.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show profile screen having:
+    \begin{itemize}
+        \item User's full name
+        \item University user number
+        \item Department
+        \item Email address (where system available)
+        \item Account creation date
+        \item Complaint statistics:
+        \begin{itemize}
+            \item Total complaints submitted
+            \item Active complaints
+            \item Resolved complaints
+            \item Average resolution time
+        \end{itemize}
+    \end{itemize}
+    \item The system shall show the profile image of a blank picture, or an icon.
+    \item The system shall have an Editing button to do the editable fields.
+\end{itemize}
+
+
+\subsubsection{View Complaint Statistics}
+
+\textbf{Introduction}
+
+The system shall show statistics regarding complaint history and the history of resolving the complaints submitted by the user.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify the request of user to see statistics.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall provide an access to all complaints of the logged user.
+    \item Statistics shall be calculated in the system:
+    \begin{itemize}
+        \item Total complaints submitted
+        \item Status complaints (New, In Progress, Resolved, Rejected, etc.)
+        \item Priority (Normal, High, Urgent) complaints.
+        \item Average resolution time
+        \item Fastest resolution time
+        \item Longest resolution time
+        \item Means of satisfaction rating awarded.
+        \item The most popular complaint trackers.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show statistics dashboard that contains:
+    \begin{itemize}
+        \item Overview cards indicating essential indicators.
+        \item Timeline of the trend of complaint submissions with time.
+        \item The average resolution time indicator.
+        \item Summary of satisfaction ratings.
+    \end{itemize}
+    \item The system shall enable filtering of statistics according to date.
+    \item The system shall offer alternative to export statistics report.
+\end{itemize}
+
+\subsection{Offline Functionality}
+
+\subsubsection{Network Status Detection}
+
+\textbf{Introduction}
+
+The system shall be constantly checking the presence of network connections and alert users.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall observe the status of network connection of the devices.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall identify the loss of network connection.
+    \item The system shall be able to tell when network connection is re-established.
+    \item The system shall feed UI indicators on network status.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show a connection status (e.g. banner or icon).
+    \item When there is no network, the system would show the indicator Offline.
+    \item The system shall notify by showing On line confirmation on restoration of connection.
+    \item The system shall be able to switch color or grayscale when not working.
+\end{itemize}
+
+\subsection{App Settings and Help}
+
+\subsubsection{Access App Settings}
+
+\textbf{Introduction}
+
+The system shall offer a settings screen whereby users shall be able to set the preferences of the app.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify the request of the user to get settings.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall get existing app settings and preferences.
+    \item The system shall categorize settings.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show settings screen that has categories:
+    \begin{itemize}
+        \item Display (theme, text size)
+        \item Privacy (use of data, cache records)
+        \item Contact (help, report an issue, terms)
+        \item Help and Support (Frequently Asked Questions, technical support)
+        \item Logout
+    \end{itemize}
+    \item The system shall also have toggle switches and a choice of each setting.
+    \item The system shall be able to implement changes as soon as it is clicked on or clicked on Save.
+\end{itemize}
+
+\subsubsection{View Help and FAQs}
+
+\textbf{Introduction}
+
+The system shall have assistance documentation and frequently asked questions to users.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify the request of a user to see help content.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall fetch the help content and FAQs either in the local storage or server.
+    \item The system shall classify the content into categories.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show help screen that contains:
+    \begin{itemize}
+        \item Getting Started guide
+        \item How to submit a complaint
+        \item Status of complaints: How to keep track.
+        \item Recording complaint statuses.
+        \item How to provide feedback
+        \item Support contacts
+        \item Support contact information
+        \item Frequently asked questions which are expandable.
+    \end{itemize}
+    \item The system shall offer search through in help contents.
+    \item The system shall enable the users to access support directly through help screen.
+\end{itemize}
+
+\subsection{Handling of errors and guidance to the user}
+
+\subsubsection{Display User-Friendly Error Messages}
+
+\textbf{Introduction}
+
+Error messages shall be presented in a clear and easy-to-use manner in case of problems with the system.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall identify errors whenever any operation is being conducted.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall determine the nature and reason of mistake.
+    \item The system shall give relevant user-friendly error message.
+    \item The system shall record the details of technical errors to be used in debugging.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall provide error messages which:
+    \begin{itemize}
+        \item Discuss in simple terms what went wrong.
+        \item Provide practical recommendations to eliminate the problem.
+        \item Avoid technical jargon
+        \item appropriate icons (warning, error) should be used.
+    \end{itemize}
+    \item Examples:
+    \begin{itemize}
+        \item ``Unable to submit complaint. Please have a look at your internet connection and try again.
+        \item ``File size too large. Please pick a smaller image of less than 2MB.
+        \item ``Something went wrong. Error: Please try later.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Validate User Input}
+
+\textbf{Introduction}
+
+The system shall authenticate anything that is entered by a user in real time and give immediate feedback.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall scan user entry in every field of form.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The system shall authenticate length, format and content in the form of user typing.
+    \item The system shall use field-specific rules of validation.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item The system shall show inline messages of validation right after fields.
+    \item The system shall be color coded (red when there is an error or green when there is a correct input).
+    \item The system shall not activate submit buttons until all the necessary fields are satisfactory.
+    \item Examples:
+    \begin{itemize}
+        \item Subject field: Required (unless empty)
+        \item Description field: 20 character min or 450/2000 character left
+        \item File upload: ``File too large. Maximum size is 2MB''
+    \end{itemize}
+    \item Red borders shall be displayed around invalid fields in the system.
+\end{itemize}
+\subsubsection{ Confirm Destructive Actions}
+
+\textbf{Introduction}
+
+The system shall need to have confirmation with the user prior to implementing the destructive actions.
+
+\paragraph{Inputs}
+\begin{itemize}
+    \item The system shall be able to identify the destructive action (delete draft, discard changes) initiated by the user.
+\end{itemize}
+
+\paragraph{Processing}
+\begin{itemize}
+    \item The machine shall stop the operation.
+    \item Confirmation dialog shall be shown in the system.
+\end{itemize}
+
+\paragraph{Outputs}
+\begin{itemize}
+    \item Confirmation dialog shall be shown in the system and it shall show:
+    \begin{itemize}
+        \item Action description and consequences are clear.
+        \item ``Cancel'' button (prominent)
+        \item ``Confirm'' button (red color)
+    \end{itemize}
+    \item The action of the system shall take place only after explicit confirmation.
+\end{itemize}
+\section{External Interface Requirements}
+\subsubsection{User Interfaces}
+The Complaint Management and Tracking System (CMTS) shall be developed as a mobile application with a user-friendly and accessible interface.
+\begin{itemize}
+    \item The system shall provide separate dashboards for students, maintenance staff, and administrators.
+    \item The user interface shall be optimized for touch-based interactions.
+    \item Screens shall include login, registration, complaint submission, complaint tracking, notifications, and profile management.
+    \item Interface elements shall be clearly visible on standard smartphone screen sizes.
+    \item User interface images and design samples shall be included in the design section.
+\end{itemize}
+\subsubsection{Hardware Interfaces}
+\begin{itemize}
+    \item The system shall operate on standard Android smartphones.
+    \item The mobile device camera shall be used to capture complaint-related images.
+    \item GPS functionality may be used to determine the location of reported issues.
+\end{itemize}
+\subsubsection{Software Interfaces}
+\begin{itemize}
+    \item The mobile application shall communicate with a backend server for data processing.
+    \item A database management system shall store users, complaints, departments, and logs.
+    \item The system shall integrate with notification services for alert delivery.
+\end{itemize}
+\subsubsection{Communications Interfaces}
+\begin{itemize}
+    \item The system shall require active internet connection via Wi-Fi or mobile data.
+    \item Secure communication protocols shall be used for data transmission.
+    \item Push notifications shall be delivered through supported mobile notification services.
+\end{itemize}
+\subsection{Performance Requirements}
+\begin{itemize}
+    \item The system shall respond to user actions within 3 seconds under normal conditions.
+    \item Complaint submission shall be completed within 5 seconds.
+    \item The system shall support multiple concurrent users.
+    \item The system shall deliver notifications with minimal delay.
+\end{itemize}
+\subsection{Design Constraints}
+\subsubsection{Standards Compliance}
+\begin{itemize}
+    \item The system shall follow standard software engineering practice.
+    \item Mobile usability and accessibility guidelines shall be followed.
+    \item Data handling shall comply with basic information security standards.
+\end{itemize}
+\subsubsection{Hardware Limitations}
+\begin{itemize}
+    \item The application shall be optimized for devices with limited memory and processing power.
+    \item Efficient battery usage shall be ensured.
+\end{itemize}
+\subsection{System Attributes}
+\subsubsection{Security}
+\begin{itemize}
+    \item User authentication shall be required to access the system.
+    \item Role-based access control shall restrict system features.
+    \item User data shall be protected from unauthorized access.
+    \item Secure channels shall be used for data transmission.
+\end{itemize}
+\subsubsection{Maintainability}
+\begin{itemize}
+    \item The system shall be modular for easy maintenance.
+    \item Future enhancements shall be possible without major redesign.
+    \item Proper documentation shall be maintained.
+\end{itemize}
+\subsection{Other Requirements}
+\subsubsection{Database Requirements}
+\begin{itemize}
+    \item The database shall store user profiles, complaints, departments, and logs.
+    \item Data integrity and consistency shall be maintained.
+    \item Backup mechanisms shall be implemented to prevent data loss.
+\end{itemize}
+\subsubsection{Operations}
+\begin{itemize}
+    \item The system shall support administrative monitoring.
+    \item Regular maintenance and updates shall be manageable.
+    \item System activity logs shall be maintained.
+\end{itemize}
+\subsubsection{Site Adaptation}
+\begin{itemize}
+    \item The system shall be adaptable to different campus environments.
+    \item Configuration options shall support institutional customization.
+    \item The system shall be scalable for future expansion.
+\end{itemize}
+
+ 
+
+\chapter{Appendixes}
+All diagrams and visual models (Context Diagram and Use Case Diagram) have been integrated into Chapter 2: General Description to maintain better flow and readability. No additional appendix material is required at this stage of the project.
+
+\end{document}
