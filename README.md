@@ -45,8 +45,6 @@ A digital platform designed to streamline complaint processing within Namal Univ
 └── README.md                 # This file
 ```
 
-## Meeting Documentation
-- **Meeting Minutes (Google Sheet):** [Click here to view meeting minutes](https://docs.google.com/spreadsheets/d/1C8OWgyDDwSmcFeImHzNbFZtPHb5JOp70PnEsCNUxZAw/edit?gid=0#gid=0)
 
 
 **Note:** This repository will be continuously updated throughout the project lifecycle with code, documentation, and meeting records.
