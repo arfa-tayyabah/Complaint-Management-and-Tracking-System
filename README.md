@@ -27,7 +27,7 @@ A digital platform designed to streamline complaint processing within Namal Univ
 **Agile (Scrum Framework)** - 14 sprints over 12 months
 
 ## Technology Stack
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** Android Studio, Java
 - **Backend:** PHP or Python (Flask)
 - **Database:** MySQL or SQLite
 - **Design:** Figma / Canva
