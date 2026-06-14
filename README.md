@@ -44,7 +44,7 @@ Required Node.js packages (automatically installed via npm):
 Installation & Setup
 --------------------
 1. Clone or download the project
-   git clone https://github.com/your-repo/cmts.git
+   git clone [https://github.com/your-repo/cmts.git](https://github.com/arfa-tayyabah/Complaint-Management-and-Tracking-System/tree/main)
    cd cmts
 
    Expected folder structure:
