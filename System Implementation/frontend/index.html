@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMTS — Complaint Management Tracking System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>window.__API_BASE__ = window.__API_BASE__ || 'http://localhost:5000/api';</script>
+</head>
+<body>
+
+  <!-- Offline banner -->
+  <div id="net-banner" class="net-banner" style="display: none;">
+    <span class="ic ic-wifiOff"></span>
+    <span>You are offline. Some features may be unavailable.</span>
+  </div>
+
+  <!-- ========== LOGIN SCREEN ========== -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-hero">
+      <div class="deco deco-1"></div>
+      <div class="deco deco-2"></div>
+      <div class="deco deco-grid"></div>
+      
+      <div class="brand">
+        <div class="logo has-img">
+          <img src="img/logo.png" alt="CMTS Logo" />
+        </div>
+        <div class="logo-text">
+          CMTS
+        </div>
+      </div>
+      
+      <div class="hero-copy">
+        <h1>Complaint Management &amp; Tracking System</h1>
+        <p>A unified portal for students, faculty, and administrators to report, manage, and resolve complaints efficiently.</p>
+        <div class="pts">
+          <div class="pt">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>Submit complaints with photo evidence and auto-generated tracking IDs</span>
+          </div>
+          <div class="pt">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>Follow every status change through a transparent timeline</span>
+          </div>
+          <div class="pt">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>Role-based access for complainants, handlers, and operators</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-foot">
+        <div class="trust-row">
+          <div class="trust">
+            <span class="tdot"></span>
+            <span>Namal University Portal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="login-panel">
+      <button id="theme-toggle-login" class="theme-toggle theme-toggle-login" aria-label="Theme"></button>
+      <div class="login-form">
+        <div class="login-mark" id="login-mark">
+          <img src="img/logo.png" alt="CMTS Logo" class="login-logo-img" style="width: 38px; height: 38px;" />
+        </div>
+        <h2>Sign In</h2>
+        <p class="sub">Enter your credentials to access the system</p>
+        
+        <form id="login-form" autocomplete="off">
+          <div class="field" id="f-email">
+            <label>Email</label>
+            <input type="email" id="login-email" placeholder="you@namal.edu" required />
+            <div class="err">Please enter a valid email</div>
+          </div>
+          <div class="field" id="f-pass">
+            <label>Password</label>
+            <input type="password" id="login-pass" placeholder="Password" required />
+            <div class="err">Password is required</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+        
+        <div class="demo-accounts">
+          <div class="lbl">Demo Accounts <span>(password: demo1234)</span></div>
+          <div id="demo-grid" class="demo-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== APP SHELL ========== -->
+  <div id="app-shell" class="app-shell">
+    <!-- Sidebar -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+    <aside id="sidebar" class="sidebar">
+      <div class="s-brand">
+        <div class="logo has-img">
+          <img src="img/logo.png" alt="CMTS Logo" />
+        </div>
+        <div>
+          <div class="nm">CMTS</div>
+          <div class="tg">Complaints</div>
+        </div>
+      </div>
+      <nav id="s-nav" class="s-nav"></nav>
+      <div class="s-foot">
+        <div id="s-user" class="s-user"></div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main">
+      <header class="topbar">
+        <button id="menu-btn" class="menu-btn" aria-label="Menu">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div id="crumb" class="crumb"></div>
+        <div class="right">
+          <button id="bell-btn" class="icon-btn" aria-label="Notifications">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="ping"></span>
+          </button>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Theme"></button>
+          <button id="logout-btn" class="icon-btn" aria-label="Logout">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </header>
+      <main id="view" class="content"></main>
+    </div>
+  </div>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="modal-overlay"></div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="close" aria-label="Close">&times;</button>
+    <img alt="Attachment preview" src="" />
+  </div>
+
+  <!-- Toast container -->
+  <div id="toasts" class="toast-container" aria-live="polite"></div>
+
+  <!-- Script for demo buttons (if they use data-demo-email) -->
+  <script>
+    document.querySelectorAll('[data-demo-email]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const email = btn.getAttribute('data-demo-email');
+        const password = btn.getAttribute('data-demo-password');
+        document.getElementById('login-email').value = email;
+        document.getElementById('login-pass').value = password;
+        setTimeout(() => {
+          document.getElementById('login-form').dispatchEvent(new Event('submit', { cancelable: true }));
+        }, 50);
+      });
+    });
+  </script>
+  <script src="js/theme.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/data-api.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
