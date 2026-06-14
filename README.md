@@ -49,21 +49,34 @@ Installation & Setup
 
    Expected folder structure:
    cmts/
+   
    ├── frontend/
+   
    │   ├── css/
+   
    │   ├── js/
+   
    │   ├── img/
+   
    │   ├── index.html
+   
    ├── backend/
+   
    │   ├── server.js
+   
    │   ├── package.json
+   
    │   ├── .env
+   
    ├── database/
+   
    │   ├── dbDDL.sql
+   
    │   └── dbDML.sql
+   
    └── README.md
 
-2. Set up the database
+3. Set up the database
    - Start your MySQL server.
    - Create the database and tables:
         mysql -u root -p < database/dbDDL.sql
@@ -74,7 +87,7 @@ Installation & Setup
      (You can generate a fresh bcrypt hash with:
         node -e "const bcrypt = require('bcryptjs'); bcrypt.hash('demo1234', 10).then(h => console.log(h));")
 
-3. Configure the backend
+4. Configure the backend
    cd backend
    npm install
    Create a .env file in the backend folder with:
@@ -85,25 +98,31 @@ Installation & Setup
         DB_NAME=complaint_db
         JWT_SECRET=your_super_secret_key_change_me
 
-4. Start the backend server
+5. Start the backend server
    node server.js
    Expected output: "CMTS Backend running on port 5000"
 
-5. Serve the frontend
+6. Serve the frontend
    Open a second terminal:
    cd ../frontend
    npx serve . -p 3000
    OR use VS Code Live Server: open the frontend folder, right‑click index.html, "Open with Live Server".
 
-6. Log in to the application
+7. Log in to the application
    Open your browser at http://localhost:3000 (or the Live Server URL).
    Use any of the demo accounts (password is demo1234 for all):
         Role               | Email
+   
         -------------------|---------------------------------
+   
         Student            | ahmed.raza@students.namal.edu
+   
         Junior Handler     | adeel.riaz@namal.edu
+   
         Senior Handler     | senior.handler@namal.edu
+   
         Software Operator  | admin@namal.edu
+   
    Click the corresponding demo button on the login screen or enter credentials manually.
 
 Usage Instructions
